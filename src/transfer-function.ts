@@ -233,5 +233,6 @@ const simplifyTerms = (terms: Term[]) => {
 
 export const parseTerms = (input: string, vars: Record<string, number>) => {
   const ast = parse(input)
-  return combineTerms(simplifyTerms(getTerms(ast, vars)))
+  const terms: Term[] = [{ type: 'y', factor: 1, offset: 0 }, ...getTerms(ast, vars)]
+  return combineTerms(simplifyTerms(terms))
 }
