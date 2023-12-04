@@ -1,0 +1,19 @@
+{
+  "name": "filter-util",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier --write . --ext=.ts,.tsx",
+    "watch": "esbuild ./src/index.tsx --watch --bundle --loader:.ttf=copy --loader:.css=local-css --outdir=build",
+    "build": "esbuild ./src/index.tsx --minify --bundle --loader:.ttf=copy --loader:.css=local-css --metafile=build/meta.json --outdir=build"
+  },
+  "author": "Teemu Pääkkönen",
+  "license": "MIT",
+  "dependencies": {
+    "esbuild": "^0.19.8",
+    "kaiku": "^1.21.7",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.2"
+  }
+}

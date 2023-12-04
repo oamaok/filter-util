@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'Computer Modern';
+  src: url('../font/cmunrm.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Computer Modern';
+  font-style: italic;
+  src: url('../font/cmunsl.ttf') format('truetype');
+}
+
+html {
+  background: #222;
+  color: #fff;
+  font-size: 24px;
+  font-family: 'Computer Modern';
+  letter-spacing: 1px;
+}
+
+sup {
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+.main {
+  width: 800px;
+  margin: 64px auto;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  font-size: 24px;
+  background: #222;
+  color: #fff;
+  outline: none;
+  border: 2px solid #555;
+  margin-left: 8px;
+  padding: 4px;
+  letter-spacing: 1px;
+  flex-grow: 1;
+  font-family: 'Computer Modern';
+}
+
+.transferFunction {
+  display: flex;
+  align-items: center;
+}
+
+.error {
+  color: #f00;
+  font-size: 14px;
+  height: 20px;
+}
+
+.transferFunction .lhs {
+  display: block;
+}
+
+.transferFunction .rhs {
+  display: block;
+  margin-left: 8px;
+}
+
+.transferFunction .rhs .numerator {
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.transferFunction .rhs .denominator {
+  display: block;
+  text-align: center;
+}
