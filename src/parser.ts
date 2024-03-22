@@ -2,6 +2,10 @@ import createParser from './create-parser'
 
 export type ASTNode =
   | {
+      type: 'root'
+      nodes: ASTNode[]
+    }
+  | {
       type: 'negate'
       rhs: ASTNode
     }
@@ -54,7 +58,7 @@ export type ASTNode =
       index: ASTNode
     }
 
-const IDENTIFIER = /^[a-z]+/i
+const IDENTIFIER = /^[a-z]+(_([a-z\d])+)?/i
 const NUMBER = /^\d+(\.(\d+)?)?/
 
 const parse = createParser<ASTNode>(
@@ -166,7 +170,27 @@ const parse = createParser<ASTNode>(
     const parseExpr = parseAssign
 
     const parse = () => {
-      const expr = parseExpr()
+      const expr: ASTNode = {
+        type: 'root',
+        nodes: [],
+      }
+
+      for (;;) {
+        if (accept(/^$/)) {
+          break
+        }
+
+        if (accept(/^#[^\n]+/)) {
+          continue
+        }
+
+        if (accept(/^\n+/)) {
+          continue
+        }
+
+        expr.nodes.push(parseExpr())
+      }
+
       return expr
     }
 

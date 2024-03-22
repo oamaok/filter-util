@@ -12,6 +12,10 @@
 html {
   background: #222;
   color: #fff;
+}
+
+* {
+  box-sizing: border-box;
   font-size: 24px;
   font-family: 'Computer Modern';
   letter-spacing: 1px;
@@ -22,9 +26,42 @@ sup {
   margin-left: 2px;
 }
 
+button {
+  border: 1px solid #999;
+  background: none;
+  color: #999;
+  border-radius: 8px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+}
+
 .main {
-  width: 800px;
+  width: 1400px;
+  display: flex;
+  flex-direction: row;
   margin: 64px auto;
+}
+
+.editor,
+.result {
+  padding: 0 8px;
+  width: 700px;
+}
+
+.var {
+  position: relative;
+  margin-top: 16px;
+}
+
+.var button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.var .name {
+  width: 120px;
 }
 
 .filter {
@@ -32,17 +69,28 @@ sup {
   align-items: center;
 }
 
-input {
-  font-size: 24px;
+.filter input {
+  margin-left: 8px;
+}
+
+input,
+textarea {
   background: #222;
   color: #fff;
   outline: none;
   border: 2px solid #555;
-  margin-left: 8px;
   padding: 4px;
-  letter-spacing: 1px;
   flex-grow: 1;
-  font-family: 'Computer Modern';
+}
+
+textarea {
+  height: 200px;
+  resize: vertical;
+  white-space: nowrap;
+}
+
+input[type='range'] {
+  width: 100%;
 }
 
 .transferFunction {

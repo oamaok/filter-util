@@ -12,7 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "esbuild": "^0.19.8",
-    "kaiku": "^1.21.7",
+    "kaiku": "^1.24.2",
     "prettier": "^3.1.0",
     "typescript": "^5.3.2"
   }

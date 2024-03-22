@@ -23,9 +23,9 @@ const createParser =
             ? pattern
             : false
           : subInput.match(pattern)?.[0]
-      if (!match) return false
+      if (match === false || match === undefined) return false
       token = match
-      subInput = subInput.substring(token.length).trim()
+      subInput = subInput.substring(token.length).replace(/^[ \t]+/, '')
       return true
     }
 
